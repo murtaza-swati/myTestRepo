@@ -1,4 +1,4 @@
-os: linux
+os: oxs
 language: ruby
 
 
