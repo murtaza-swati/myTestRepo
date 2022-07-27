@@ -1,2 +1,5 @@
 os: linux
-language: ruby
+dist: jammy
+group: dev
+language: generic
+script: echo “Hello World!”
