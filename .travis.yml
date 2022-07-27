@@ -1,5 +1,5 @@
 os: linux
-dist: jammy
+dist: focal
 group: dev
 language: generic
 script: echo “Hello World!”
