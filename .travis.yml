@@ -1,5 +1,4 @@
 os: linux
-dist: bionic
-language: bash
-script: echo "test" && echo $ENV1 | hd
-
+dist: focal
+language: generic
+script: "p4 --help"
