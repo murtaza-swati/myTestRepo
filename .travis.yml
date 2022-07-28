@@ -1,4 +1,2 @@
 os: linux
-dist: focal
-language: generic
-script: "p4 --help"
+language: ruby
