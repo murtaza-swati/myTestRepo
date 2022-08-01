@@ -5,7 +5,7 @@ deploy:
   provider: lambda
   access_key_id: $ACCESS_KEY_ID
   secret_access_key: $SECRET_ACCESS_KEY
-  function_name: test_bsfy_func_142
+  function_name: bsfy_test_function1
   edge:
   - source: travis-ci/dpl
   - branch: update_aws_lambda_am
