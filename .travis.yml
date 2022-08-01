@@ -1,7 +1,6 @@
 os: linux
 dist: focal
 language: python
-arch: arm64
 deploy:
   provider: lambda
   access_key_id: $ACCESS_KEY_ID
