@@ -13,3 +13,4 @@ deploy:
   - branch: update_aws_lambda_am
 script:
   - python hello_world.py
+
