@@ -7,7 +7,6 @@ install:
   - zip -r functions.zip *
 script:
   - echo "NO TESTS"
-
 deploy:
   - provider: lambda
     function_name: test_bsfy_func_1412
