@@ -7,6 +7,7 @@ deploy:
   secret_access_key: $AWS_SECRET_KEY
   function_name: bsfy_test_function1
   runtime: nodejs16.x
+  role: arn:aws:iam::341288657826:role/bsfy_lambda_role
   edge:
   - source: travis-ci/dpl
   - branch: update_aws_lambda_am
