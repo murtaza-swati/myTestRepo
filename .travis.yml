@@ -1,17 +1,26 @@
 os: linux
-dist: focal
-language: python
+dist: xenial
+language: node_js
+node_js: 16
+sudo: false
+install:
+  - zip -r functions.zip *
+script:
+  - echo "NO TESTS"
 edge:
   source: travis-ci/dpl
   branch: update_aws_lambda_am
 deploy:
-  provider: lambda
-  handler_name: test
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
-  function_name: bsfy_test_function1234
-  runtime: nodejs16.x
-  role: arn:aws:iam::341288657826:role/bsfy_lambda_role
-script:
-  - python hello_world.py
+  - provider: lambda
+    function_name: test_bsfy_func_14
+    role: arn:aws:iam::341288657826:role/bsfy_lambda_role
+    handler_name: test
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    region: us-east-1
+    runtime: nodejs16.x
+    zip: build/function.zip
+    on:
+      all_branches: true
+
 
