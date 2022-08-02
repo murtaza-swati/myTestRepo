@@ -12,7 +12,7 @@ edge:
   branch: update_aws_lambda_am
 deploy:
   - provider: lambda
-    function_name: test_bsfy_func_14
+    function_name: test_bsfy_func_1412
     role: arn:aws:iam::341288657826:role/bsfy_lambda_role
     handler_name: test
     access_key_id: $AWS_ACCESS_KEY
