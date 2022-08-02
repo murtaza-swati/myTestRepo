@@ -7,9 +7,7 @@ install:
   - zip -r functions.zip *
 script:
   - echo "NO TESTS"
-edge:
-  source: travis-ci/dpl
-  branch: update_aws_lambda_am
+
 deploy:
   - provider: lambda
     function_name: test_bsfy_func_1412
@@ -20,6 +18,9 @@ deploy:
     region: us-east-1
     runtime: nodejs16.x
     zip: build/function.zip
+    edge:
+      source: travis-ci/dpl
+      branch: update_aws_lambda_am
     on:
       all_branches: true
 
