@@ -6,6 +6,7 @@ deploy:
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
   function_name: bsfy_test_function1
+  runtime: nodejs16.x
   edge:
   - source: travis-ci/dpl
   - branch: update_aws_lambda_am
