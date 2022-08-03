@@ -1,3 +1,10 @@
 language: android
-jdk: oraclejdk11 # comment because there is a workaround on before_install
-
+os:
+- linux
+dist: xenial
+jdk:
+- oraclejdk11
+android:
+  components:
+  - tools
+  - extra-android-m2repository
