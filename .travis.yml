@@ -17,9 +17,3 @@ licenses:
   - 'android-sdk-license-.+'
   - 'google-gdk-license-.+'
 
-git:
-  quiet: true
-  submodules: false
-
-script:
-  - bash ci/travis/build.sh
