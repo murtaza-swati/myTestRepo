@@ -1,5 +1,7 @@
-language: android
-jdk: openjdk11
-dist: trusty
-
+jobs:
+  include:
+   - dist: trusty
+     arch: amd64
+     language: android
+     jdk: openjdk11
   
