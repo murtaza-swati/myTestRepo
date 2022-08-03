@@ -1,14 +1,25 @@
-os: linux
-dist: focal
-language: python
-deploy:
-  provider: lambda
-  access_key_id: $ACCESS_KEY_ID
-  secret_access_key: $SECRET_ACCESS_KEY
-  function_name: test_bsfy_func_142
-  edge:
-  - source: travis-ci/dpl
-  - branch: update_aws_lambda_am
-script:
-  - python hello_world.py
+language: android
+jdk: oraclejdk11 # comment because there is a workaround on before_install
 
+env:
+  global:
+    - BUILD_API=31
+    - BUILD_TOOLS=31.0.0
+    - ANDROID_HOME=/usr/local/android-sdk
+    - TOOLS=${ANDROID_HOME}/cmdline-tools/latest
+
+android:
+  components:
+    - tools
+
+licenses:
+  - 'android-sdk-preview-license-.+'
+  - 'android-sdk-license-.+'
+  - 'google-gdk-license-.+'
+
+git:
+  quiet: true
+  submodules: false
+
+script:
+  - bash ci/travis/build.sh
