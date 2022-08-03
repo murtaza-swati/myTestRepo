@@ -3,7 +3,7 @@ jobs:
    - dist: xenial
      arch: amd64
      language: android
-     jdk: openjdk17
+     jdk: openjdk11
      script:
       #- ./script2
       - java -version
@@ -12,7 +12,7 @@ jobs:
    - dist: bionic
      arch: amd64
      language: android
-     jdk: openjdk17
+     jdk: openjdk11
      script:
       #- ./script2
       - java -version
@@ -21,7 +21,7 @@ jobs:
    - dist: focal
      arch: amd64
      language: android
-     jdk: openjdk17
+     jdk: openjdk11
      script:
       #- ./script2
       - java -version
