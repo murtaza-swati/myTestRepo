@@ -1,4 +1,3 @@
 language: android
 jdk: openjdk11  
-arch: amd64
-dist: trusty
+dist: xenial
