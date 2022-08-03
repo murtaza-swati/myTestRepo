@@ -1,11 +1,9 @@
-jobs:
-  include:
-   - dist: trusty
-     arch: amd64
-     language: android
-     jdk: openjdk11
-     script:
-      #- ./script2
-      - java -version
-      - echo $JAVA_HOME
-      - echo $PATH
+dist: trusty
+arch: amd64
+language: android
+jdk: openjdk11
+script:
+#- ./script2
+- java -version
+- echo $JAVA_HOME
+- echo $PATH
