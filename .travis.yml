@@ -1,5 +1,29 @@
-language: android
-os: linux
-dist: xenial
-jdk: oraclejdk11
-
+jobs:
+  include:
+   - dist: xenial
+     arch: amd64
+     language: android
+     jdk: openjdk17
+     script:
+      #- ./script2
+      - java -version
+      - echo $JAVA_HOME
+      - echo $PATH
+   - dist: bionic
+     arch: amd64
+     language: android
+     jdk: openjdk17
+     script:
+      #- ./script2
+      - java -version
+      - echo $JAVA_HOME
+      - echo $PATH
+   - dist: focal
+     arch: amd64
+     language: android
+     jdk: openjdk17
+     script:
+      #- ./script2
+      - java -version
+      - echo $JAVA_HOME
+      - echo $PATH
