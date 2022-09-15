@@ -19,7 +19,7 @@ deploy:
     zip: build/function.zip
     edge:
       source: travis-ci/dpl
-      branch: update_aws_lambda_am
+      branch: master
     on:
       all_branches: true
 
