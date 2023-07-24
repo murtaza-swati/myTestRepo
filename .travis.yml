@@ -1,26 +1,17 @@
 os: linux
-dist: xenial
-language: node_js
-node_js: 16
-sudo: false
-install:
-  - zip -r functions.zip *
+language: python
+dist: focal
+stage: Instal addons on linux
+group: edge
+name: addons on focal distribution without
+python: '3.9'
+arch: amd64
 script:
-  - echo "NO TESTS"
-edge:
-  source: travis-ci/dpl
-  branch: update_aws_lambda_am
-deploy:
-  - provider: lambda
-    function_name: test_bsfy_func_14
-    role: arn:aws:iam::341288657826:role/bsfy_lambda_role
-    handler_name: test
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
-    region: us-east-1
-    runtime: nodejs16.x
-    zip: build/function.zip
-    on:
-      all_branches: true
-
-
+- |-
+  df -h
+  lspci
+  echo "Going for sleep"
+  for ((i=1; i<=1; i++)); do
+    echo "Elapsed minutes: $i"
+    sleep 60s
+  done
