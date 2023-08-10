@@ -1,9 +1,9 @@
 os: linux
 language: python
 dist: focal
-stage: Instal addons on linux
+stage: Run premium VM build
 group: edge
-name: addons on focal distribution without
+name: Premium VMs builds
 python: '3.9'
 arch: amd64
 vm:
