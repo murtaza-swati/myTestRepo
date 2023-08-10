@@ -6,6 +6,8 @@ group: edge
 name: addons on focal distribution without
 python: '3.9'
 arch: amd64
+vm:
+  size: large
 script:
 - |-
   df -h
