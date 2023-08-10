@@ -6,8 +6,6 @@ group: edge
 name: Premium VMs builds
 python: '3.9'
 arch: amd64
-vm:
-  size: large
 script:
 - |-
   df -h
