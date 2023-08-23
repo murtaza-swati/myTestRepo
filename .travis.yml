@@ -1,51 +1,7 @@
-language: android
-jdk: oraclejdk11 # comment because there is a workaround on before_install
-
-env:
-  global:
-    - BUILD_API=31
-    - BUILD_TOOLS=31.0.0
-    - ANDROID_HOME=/usr/local/android-sdk
-    - TOOLS=${ANDROID_HOME}/cmdline-tools/latest
-
-android:
-  components:
-    - tools
-
-licenses:
-  - 'android-sdk-preview-license-.+'
-  - 'android-sdk-license-.+'
-  - 'google-gdk-license-.+'
-
-before_install:
-  # workaround openjdk11
-  #
-  # The command "~/bin/install-jdk.sh --target "/home/travis/oraclejdk11" --workspace "/home/travis/
-  # .cache/install-jdk" --feature "11" --license "BCL"" failed and exited with 1 during
-  #
-  # - curl -s "https://get.sdkman.io" | bash
-  # - source "$HOME/.sdkman/bin/sdkman-init.sh"
-  # - sdk install java 11.0.12-open
-  # - sdk use java 11.0.12-open
-  # - java -version
-  # end workaround
-
-  # Install cmdline-tools (older tools doesn't support Java 11)
-  - wget -q "https://dl.google.com/android/repository/commandlinetools-linux-7583922_latest.zip" -O android-commandline-tools-linux.zip
-  - mkdir -p ${ANDROID_HOME}/cmdline-tools
-  - unzip -q android-commandline-tools-linux.zip -d ${ANDROID_HOME}/cmdline-tools
-  - mv ${ANDROID_HOME}/cmdline-tools/cmdline-tools ${ANDROID_HOME}/cmdline-tools/latest
-
-before_script:
-  - echo y | ${TOOLS}/bin/sdkmanager "platform-tools" >/dev/null
-  - echo y | ${TOOLS}/bin/sdkmanager "tools" >/dev/null
-  - echo y | ${TOOLS}/bin/sdkmanager "build-tools;$BUILD_TOOLS" >/dev/null
-  - echo y | ${TOOLS}/bin/sdkmanager "platforms;android-$BUILD_API" >/dev/null
-  - echo y | ${TOOLS}/bin/sdkmanager "extras;android;m2repository" >/dev/null
-
-
-before_cache:
-  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
-  
-
+os: linux
+dist: focal
+arch: amd64
+language: ruby
+jobs:
+- CI_NODE_INDEX=0
+- CI_NODE_INDEX=1
