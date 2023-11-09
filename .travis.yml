@@ -5,6 +5,4 @@ language: ruby
 jobs:
   include:
     - stage: test1
-      script: echo "testing1..."
-    - stage: test2
-      script: echo "testing2..."
+      script: echo "testing1...."
